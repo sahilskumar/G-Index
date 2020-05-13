@@ -2,7 +2,7 @@
 document.write('<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">');
 // markdown Standby
 document.write('<script src="//cdn.jsdelivr.net/npm/markdown-it@10.0.0/dist/markdown-it.min.js"></script>');
-document.write('<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>*{padding:0 6px;margin:0 2px}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>.mdui-typo-headline{padding:0 1pc 0 0}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:1280px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1}@media screen and (max-width:1280px){.mdui-list-item .mdui-col-sm-3{display:none}.mdui-container{width:100%!important;margin:0}.mdui-toolbar>.mdui-typo-headline,.mdui-toolbar>a:last-child,.mdui-toolbar>i:first-child{display:block}}</style>');
+document.write('<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>*{padding:0 6px;margin:0 2px}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>.mdui-typo-headline{padding:0 1pc 0 0}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1}@media screen and (max-width:980px){.mdui-list-item .mdui-col-sm-3{display:none}.mdui-container{width:100%!important;margin:0}.mdui-toolbar>.mdui-typo-headline,.mdui-toolbar>a:last-child,.mdui-toolbar>i:first-child{display:block}}</style>');
 
 if(dark){document.write('<style>* {box-sizing: border-box}body{color:rgba(255,255,255,.87);background-color:#333232}.mdui-theme-primary-'+main_color+' .mdui-color-theme{background-color:#232427!important}</style>');}
 
@@ -369,20 +369,17 @@ function append_files_to_list(path, files) {
       var ext = p.split('.').pop().toLowerCase();
       if ("|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|pdf|".indexOf(`|${ext}|`) >= 0) {
         targetFiles.push(filepath);
-        var down = p
-        p += "?a=view";
+        p += "";
         c += " view";
       }
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
-	          <div class="mdui-col-xs-12 mdui-col-sm-5 mdui-text-truncate">
+	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item['modifiedTime']}</div>
-            <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
-            </a>
-            <div class="mdui-col-sm-1 mdui-text-right">
-            <a href="${down}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a></div>
+	          <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
+	          </a>
 	      </li>`;
     }
   }
@@ -568,7 +565,7 @@ function append_search_result_to_list(files) {
 	              ${item.name}
 	            </div>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item['modifiedTime']}</div>
-              <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
+	            <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
 	            </a>
 	        </li>`;
     } else {
