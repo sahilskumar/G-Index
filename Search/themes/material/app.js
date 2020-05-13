@@ -369,7 +369,8 @@ function append_files_to_list(path, files) {
       var ext = p.split('.').pop().toLowerCase();
       if ("|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|flac|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|pdf|".indexOf(`|${ext}|`) >= 0) {
         targetFiles.push(filepath);
-        p += "";
+        var down = p
+        p += "?a=view";
         c += " view";
       }
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
@@ -378,8 +379,9 @@ function append_files_to_list(path, files) {
 	            ${item.name}
 	          </div>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item['modifiedTime']}</div>
-	          <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
-	          </a>
+            <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
+            </a>
+            <a href="${down}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
 	      </li>`;
     }
   }
@@ -565,7 +567,7 @@ function append_search_result_to_list(files) {
 	              ${item.name}
 	            </div>
 	            <div class="mdui-col-sm-3 mdui-text-right">${item['modifiedTime']}</div>
-	            <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
+              <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
 	            </a>
 	        </li>`;
     } else {
