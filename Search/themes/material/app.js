@@ -374,14 +374,14 @@ function append_files_to_list(path, files) {
         c += " view";
       }
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
-	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
+	          <div class="mdui-col-xs-12 mdui-col-sm-5 mdui-text-truncate">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
 	            ${item.name}
 	          </div>
 	          <div class="mdui-col-sm-3 mdui-text-right">${item['modifiedTime']}</div>
             <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
             </a>
-            <div class="mdui-col-sm-2 mdui-text-right">
+            <div class="mdui-col-sm-1 mdui-text-right">
             <a href="${down}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a></div>
 	      </li>`;
     }
