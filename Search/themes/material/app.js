@@ -372,6 +372,7 @@ function append_files_to_list(path, files) {
         p += "";
         c += " view";
       }
+      console.log(p);
       html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
 	          <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
 	          <i class="mdui-icon material-icons">insert_drive_file</i>
