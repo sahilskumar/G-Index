@@ -381,7 +381,8 @@ function append_files_to_list(path, files) {
 	          <div class="mdui-col-sm-3 mdui-text-right">${item['modifiedTime']}</div>
             <div class="mdui-col-sm-2 mdui-text-right">${item['size']}</div>
             </a>
-            <a href="${down}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a>
+            <div class="mdui-col-sm-2 mdui-text-right">
+            <a href="${down}" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">file_download</i></a></div>
 	      </li>`;
     }
   }
